@@ -1,0 +1,252 @@
+﻿<Window x:Class="MFD_Thingy.Win_Themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MFD_Thingy"
+        mc:Ignorable="d"
+        
+        xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+        
+        Style="{DynamicResource CustomWindowStyle}"
+        BorderThickness="1" 
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Height="350" 
+        Width="400"
+        Title="Themes" 
+        Loaded="Window_Loaded">
+    <Grid Margin="{StaticResource BottomMargin}">
+
+        <Grid 
+            Margin="{StaticResource PanelMargin}"
+            x:Name="Grid_ThemesEdit"
+            Visibility="Collapsed"
+        >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+                
+            <!--Name-->
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Theme Name:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <TextBox
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Txt_ThemeName"
+                Width="200"
+                HorizontalAlignment="Left"
+            ></TextBox>
+
+            <!--Color Screen Background-->
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Screen Background Color:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <colorpicker:PortableColorPicker 
+                Grid.Row="1" 
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Color_ScreenBackground"
+                SmallChange="5"
+                ShowAlpha="False"
+                Style="{StaticResource DefaultColorPickerStyle}"
+                ColorState="{Binding ElementName=maindisplay, Path=ColorState, Mode=TwoWay, Delay=10}"
+                SecondColorState="{Binding ElementName=maindisplay, Path=SecondColorState, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+            />
+            
+            <!--Color Background-->
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Control Background Color:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <colorpicker:PortableColorPicker 
+                Grid.Row="2" 
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Color_Background"
+                SmallChange="5"
+                ShowAlpha="False"
+                Style="{StaticResource DefaultColorPickerStyle}"
+                ColorState="{Binding ElementName=maindisplay, Path=ColorState, Mode=TwoWay, Delay=10}"
+                SecondColorState="{Binding ElementName=maindisplay, Path=SecondColorState, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+            />
+
+            <!--Color Forground-->
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Control Text Color:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <colorpicker:PortableColorPicker 
+                Grid.Row="3" 
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Color_Forground"
+                SmallChange="5"
+                ShowAlpha="False"
+                Style="{StaticResource DefaultColorPickerStyle}"
+                ColorState="{Binding ElementName=maindisplay, Path=ColorState, Mode=TwoWay, Delay=10}"
+                SecondColorState="{Binding ElementName=maindisplay, Path=SecondColorState, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+            />
+
+            <!--Item Width-->
+            <TextBlock
+                Grid.Row="4"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Control Min Width:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <TextBox
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Txt_ItemWidth"
+                Width="200"
+                HorizontalAlignment="Left"
+                PreviewTextInput="Txt_ItemWidth_PreviewTextInput"
+            ></TextBox>
+
+            <!--Item Spacing-->
+            <TextBlock
+                Grid.Row="5"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Control Min Width:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <TextBox
+                Grid.Row="5"
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Txt_ItemSpacing"
+                Width="200"
+                HorizontalAlignment="Left"
+                PreviewTextInput="Txt_ItemSpacing_PreviewTextInput"
+            ></TextBox>
+
+            <Button
+                Grid.Row="6"
+                Grid.Column="0"
+                x:Name="Btn_ThemeSave_Cancel"
+                Margin="{StaticResource RightMargin}"
+                Content="Cancel"
+                HorizontalAlignment="Left"
+                Click="Btn_ThemeSave_Cancel_Click"
+            ></Button>
+
+            <Button
+                Grid.Row="6"
+                Grid.Column="1"
+                x:Name="Btn_ThemeSave_Save"
+                Margin="{StaticResource RightMargin}"
+                Content="Save"
+                HorizontalAlignment="Right"
+                Click="Btn_ThemeSave_Save_Click"
+            ></Button>
+
+        </Grid>
+
+        <Grid 
+            Margin="{StaticResource PanelMargin}"
+            x:Name="Grid_ThemesData"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel
+                Grid.Row="0"
+                Margin="{StaticResource PanelMargin}"
+                Orientation="Horizontal"
+            >
+                <Button
+                    x:Name="Btn_NewTheme"
+                    Margin="{StaticResource RightMargin}"
+                    Content="New"
+                    Click="Btn_NewTheme_Click"
+                ></Button>
+
+                <Button
+                    x:Name="Btn_EditTheme"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Edit"
+                    Click="Btn_EditTheme_Click"
+                ></Button>
+
+                <Button
+                    x:Name="Btn_DeleteTheme"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Delete"
+                    Click="Btn_DeleteTheme_Click"
+                ></Button>
+            </StackPanel>
+
+            <Grid
+                Grid.Row="1"
+                Margin="{StaticResource PanelMargin}"
+            >
+                <DataGrid
+                    x:Name="Grid_Themes"
+                    Background="Transparent"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="True"
+                    CanUserResizeRows="False"
+                    CanUserSortColumns="True"
+                    AutoGenerateColumns="True"
+            
+                >
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell" >
+                            <Setter Property="Foreground" Value="{StaticResource ControlDefaultForeground}"></Setter>
+                        </Style>
+                    </DataGrid.CellStyle>
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+        
+        
+        
+    </Grid>
+</Window>

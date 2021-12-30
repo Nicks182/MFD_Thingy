@@ -1,0 +1,18 @@
+﻿
+
+.MT_Btn
+{
+    text-decoration: none;
+    color: var(--BtnColor);
+    border-color: var(--BtnColor);
+    background-color: var(--BtnColorBG);
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: normal;
+    box-shadow: 0 1px 6px var(--BoxShadow);
+}
+
+
+.MT_Btn:hover{
+
+}

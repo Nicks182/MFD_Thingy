@@ -1,0 +1,196 @@
+﻿<Window x:Class="MFD_Thingy.Win_Controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MFD_Thingy"
+        mc:Ignorable="d"
+        
+        Style="{DynamicResource CustomWindowStyle}"
+        BorderThickness="1" 
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Height="350" 
+        Width="400"
+        Title="Controls"
+        Loaded="Window_Loaded">
+    <Grid Margin="{StaticResource BottomMargin}">
+
+        <Grid 
+            Margin="{StaticResource PanelMargin}"
+            x:Name="Grid_ControlEdit"
+            Visibility="Collapsed"
+        >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--Name-->
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Control Name:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <TextBox
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Txt_ControlName"
+                Width="200"
+                HorizontalAlignment="Left"
+            ></TextBox>
+
+            <!--Theme-->
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="{StaticResource BottomRightMargin}"
+                Text="Theme:"
+                VerticalAlignment="Center"
+            ></TextBlock>
+
+            <ComboBox
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="{StaticResource BottomRightMargin}"
+                x:Name="Drop_Theme"
+                IsEditable="False"
+            >
+            </ComboBox>
+
+
+            <Button
+                Grid.Row="6"
+                Grid.Column="0"
+                x:Name="Btn_Done_Cancel"
+                Margin="{StaticResource RightMargin}"
+                Content="Cancel"
+                HorizontalAlignment="Left"
+                Click="Btn_Done_Cancel_Click"
+            ></Button>
+
+            <Button
+                Grid.Row="6"
+                Grid.Column="1"
+                x:Name="Btn_Done_Save"
+                Margin="{StaticResource RightMargin}"
+                Content="Save"
+                HorizontalAlignment="Right"
+                Click="Btn_Done_Save_Click"
+            ></Button>
+
+        </Grid>
+
+        <Grid 
+            Margin="{StaticResource PanelMargin}"
+            x:Name="Grid_ControlData"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="0"
+                Margin="{StaticResource PanelMargin}"
+            >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="0"
+                    x:Name="Btn_New"
+                    Margin="{StaticResource RightMargin}"
+                    Content="New"
+                    Click="Btn_New_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="1"
+                    x:Name="Btn_Edit"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Edit"
+                    Click="Btn_Edit_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="2"
+                    x:Name="Btn_Delete"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Delete"
+                    Click="Btn_Delete_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="4"
+                    x:Name="Btn_MoveUp"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Move Up"
+                    Click="Btn_MoveUp_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="5"
+                    x:Name="Btn_MoveDown"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Move Down"
+                    Click="Btn_MoveDown_Click"
+                ></Button>
+                
+
+                <Button
+                    Grid.Column="7"
+                    x:Name="Btn_Actions"
+                    Content="Actions"
+                    Click="Btn_Actions_Click"
+                ></Button>
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                
+                Margin="{StaticResource PanelMargin}"
+            >
+                <DataGrid
+                    x:Name="Grid_Controls"
+                    Background="Transparent"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="True"
+                    CanUserResizeRows="False"
+                    CanUserSortColumns="True"
+                    AutoGenerateColumns="True"
+            
+                >
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell" >
+                            <Setter Property="Foreground" Value="{StaticResource ControlDefaultForeground}"></Setter>
+                        </Style>
+                    </DataGrid.CellStyle>
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>

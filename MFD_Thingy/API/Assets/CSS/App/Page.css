@@ -1,0 +1,45 @@
+﻿
+.Page
+{
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    grid-template-rows: min-content min-content;
+    grid-gap: 10px;
+    grid-template-areas:
+        "back caption fullscreen"
+        "body body body";
+    height: 100%;
+    background-color: var(--ColorBG);
+    padding: 5px;
+}
+
+
+.Page_Back
+{
+    grid-area: back;
+    text-transform: uppercase;
+}
+
+.Page_Caption
+{
+    grid-area: caption;
+    text-transform: uppercase;
+}
+
+.Page_Fulscreen
+{
+    grid-area: fullscreen;
+    text-transform: uppercase;
+}
+
+
+.Page_Body
+{
+    grid-area: body;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(var(--ControlMinWidth), 1fr) );
+    grid-auto-rows: min-content;
+    grid-gap: var(--ControlSpacing);
+    
+}

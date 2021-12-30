@@ -1,0 +1,7 @@
+body
+{
+    height: 100%;
+    background-color: var(--MainBackgroundColor);
+    padding: 5px;
+    margin: 0px;
+}

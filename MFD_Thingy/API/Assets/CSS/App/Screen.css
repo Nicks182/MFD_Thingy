@@ -1,0 +1,9 @@
+﻿
+.MT_Screen
+{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(var(--ControlMinWidth), 1fr) );
+    grid-auto-rows: auto;
+    grid-gap: var(--ControlSpacing);
+    background-color: var(--ColorBG);
+}

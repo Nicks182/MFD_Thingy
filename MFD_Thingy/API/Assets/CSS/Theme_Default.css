@@ -1,0 +1,16 @@
+﻿
+
+html
+{
+    height: calc(100% - 25px);
+    --MainBackgroundColor: black;
+    --MainColorR: 157;
+    --MainColorG: 201;
+    --MainColorB: 245;
+    --BtnColor: rgba(var(--MainColorR), var(--MainColorG), var(--MainColorB), 1);
+    --BtnColorBG: rgba(var(--MainColorR), var(--MainColorG), var(--MainColorB), 0.1);
+    --ColorBG: rgba(var(--MainColorR), var(--MainColorG), var(--MainColorB), 0.1);
+    --ControlSpacing: 10px;
+    --ControlMinWidth: 120px;
+    --BoxShadow: rgba(var(--MainColorR), var(--MainColorG), var(--MainColorB), .4);
+}

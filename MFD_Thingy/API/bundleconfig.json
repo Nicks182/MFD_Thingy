@@ -1,0 +1,20 @@
+[
+  {
+    "outputFileName": "wwwroot/Script.min.js",
+    "inputFiles": [
+      "Assets/Script/_Libs/jquery/jquery.min.js",
+      "Assets/Script/_Ajax/Ajax_Send.js",
+      "Assets/Script/_Ajax/Ajax_Receive.js",
+      "Assets/Script/App/**/*.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/Style.min.css",
+    "inputFiles": [
+      "Assets/CSS/Theme_Default.css",
+      "Assets/CSS/App/**/*.css"
+    ]
+  }
+]
+
+

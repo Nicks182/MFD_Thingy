@@ -1,0 +1,167 @@
+﻿<Window x:Class="MFD_Thingy.Win_Config"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MFD_Thingy"
+        mc:Ignorable="d"
+        
+        Style="{DynamicResource CustomWindowStyle}"
+        BorderThickness="1" 
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Height="350" 
+        Width="400"
+        Title="Applications" 
+        Loaded="Window_Loaded" >
+    <Grid Margin="{StaticResource BottomMargin}">
+
+        <Grid
+                x:Name="Grid_NewEditApp"
+                Margin="{StaticResource PanelMargin}"
+                Visibility="Collapsed"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel 
+                    Margin="{StaticResource BottomMargin}"
+                    Orientation="Horizontal"
+                >
+                <TextBlock
+                        Margin="{StaticResource RightMargin}"
+                        Text="Application Name:"
+                        VerticalAlignment="Center"
+                    ></TextBlock>
+
+                <TextBox
+                        x:Name="Txt_ApplicationName"
+                        Width="300"
+                    ></TextBox>
+            </StackPanel>
+
+            <StackPanel
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    Margin="{StaticResource BottomMargin}"
+                >
+                <Button
+                        x:Name="Btn_AppSave_Cancel"
+                        Margin="{StaticResource RightMargin}"
+                        Content="Cancel"
+                        Click="Btn_AppSave_Cancel_Click"
+                    ></Button>
+
+                <Button
+                        x:Name="Btn_AppSave_Save"
+                        Margin="{StaticResource RightMargin}"
+                        Content="Save"
+                        Click="Btn_AppSave_Save_Click"
+                    ></Button>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid x:Name="Grid_Apps">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            
+            <Grid
+                Grid.Row="0"
+                
+                Margin="{StaticResource PanelMargin}"
+            >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            
+                <Button
+                    Grid.Column="0"
+                    x:Name="Btn_NewApp"
+                    Margin="{StaticResource RightMargin}"
+                    Content="New"
+                    Click="Btn_NewApp_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="1"
+                    x:Name="Btn_EditApp"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Edit"
+                    Click="Btn_EditApp_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="2"
+                    x:Name="Btn_DeleteApp"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Delete"
+                    Click="Btn_DeleteApp_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="4"
+                    x:Name="Btn_Screens"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Screens"
+                    Click="Btn_Screens_Click"
+                ></Button>
+            
+                <Button
+                    Grid.Column="5"
+                    x:Name="Btn_Themes"
+                    Margin="{StaticResource RightMargin}"
+                    Content="Themes"
+                    Click="Btn_Themes_Click"
+                ></Button>
+
+                <Button
+                    Grid.Column="6"
+                    x:Name="Btn_Actions"
+                    Content="Actions"
+                    Click="Btn_Actions_Click"
+                ></Button>
+
+            </Grid>
+
+        
+
+            <Grid
+                Grid.Row="1"
+                Margin="{StaticResource PanelMargin}"
+            >
+                <DataGrid
+                    x:Name="Grid_Applications"
+                    Background="Transparent"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="True"
+                    CanUserResizeRows="False"
+                    CanUserSortColumns="True"
+                    AutoGenerateColumns="True"
+            
+                >
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell" >
+                            <Setter Property="Foreground" Value="{StaticResource ControlDefaultForeground}"></Setter>
+                        </Style>
+                    </DataGrid.CellStyle>
+                </DataGrid>
+            </Grid>
+        
+        </Grid>
+    </Grid>
+</Window>
