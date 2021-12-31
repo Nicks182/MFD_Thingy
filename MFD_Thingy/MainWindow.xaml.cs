@@ -46,7 +46,10 @@ namespace MFD_Thingy
 
             this.messageBusService.RegisterEvent("controllermessage", (status) =>
             {
-                Txt_ServerOutput.Text += "API Message: " + status + Environment.NewLine;
+                if (Check_LogAll.IsChecked.GetValueOrDefault(false) == true)
+                {
+                    Txt_ServerOutput.Text += "API Message: " + status + Environment.NewLine;
+                }
             });
 
 

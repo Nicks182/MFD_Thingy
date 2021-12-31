@@ -29,6 +29,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
@@ -49,8 +50,16 @@
                 Click="Btn_Stop_Click"
             ></Button>
 
+            <CheckBox
+                Grid.Column="2"
+                Margin="0,0,5,0"
+                Name="Check_LogAll"
+                Content="Log All"
+                
+            ></CheckBox>
+
             <Button
-                Grid.Column="3"
+                Grid.Column="4"
                 Margin="0,0,5,0"
                 Name="Btn_Config"
                 Content="Confg"
