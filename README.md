@@ -14,15 +14,18 @@ By no means is this some sort of complete solution and was put together rather q
 
 Devices you can use with this can be old phones, tablets, or even a raspberry pi with touch screen.
 
+
+Use cases?
+I made this to use in Star Citizen which is the only Sim style game that I play currently. However, since this app simulates mouse and keyboard inputs, you can make all sorts of screens. You can have a screen for Kodi, youtube, or any app that is usable with shortcut keys.
+
+
+[![Youtube Demo](https://img.youtube.com/vi/yC3m9ijjm_Q/hqdefault.jpg)](https://www.youtube.com/watch?v=yC3m9ijjm_Q)
+
+
+
 NOTES: 
 - Uses https://github.com/HavenDV/H.InputSimulator
 
 - I know some of the keys are impossible to find. This is due to the library that I'm using to simulate the keys. I used the list of keys that comes with the library as is. I may change this i nthe future.
 
 - Uses a visual studio plugin called Bundle & Minifier by Mark Kristensen to bundle the CSS and javascript.
-
-
-I made this to use in Star Citizen which is the only Sim style game that I play currently. However, since this app simulates mouse and keyboard inputs, you can make all sorts of screens. You can have a screen for Kodi, youtube, or any app that is usable with shortcut keys.
-
-Demo:
-[![Youtube Demo](https://img.youtube.com/vi/yC3m9ijjm_Q/hqdefault.jpg)](https://www.youtube.com/watch?v=yC3m9ijjm_Q)
