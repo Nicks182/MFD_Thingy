@@ -19,7 +19,7 @@ Devices you can use with this can be old phones, tablets, or even a raspberry pi
 I made this to use in Star Citizen which is the only Sim style game that I play currently. However, since this app simulates mouse and keyboard inputs, you can make all sorts of screens. You can have a screen for Kodi, youtube, or any app that is usable with shortcut keys.
 
 ### How can you get it?
-Download the zip int he Build folder. It's a self contained build, thus the size, so you should not have to install things like dotnet framework.
+Download the zip in the Build folder. It's a self contained build, thus the size, so you should not have to install things like dotnet framework.
 
 
 ### Demo
