@@ -32,6 +32,6 @@ Download the zip in the Build folder. It's a self contained build, thus the size
 NOTES: 
 - Uses https://github.com/HavenDV/H.InputSimulator
 
-- I know some of the keys are impossible to find. This is due to the library that I'm using to simulate the keys. I used the list of keys that comes with the library as is. I may change this i nthe future.
+- I know some of the keys are impossible to find. This is due to the library that I'm using to simulate the keys. I used the list of keys that comes with the library as is. I may change this in the future.
 
 - Uses a visual studio plugin called Bundle & Minifier by Mark Kristensen to bundle the CSS and javascript.
