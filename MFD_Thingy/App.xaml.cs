@@ -43,4 +43,9 @@ namespace MFD_Thingy
 
         }
     }
+
+    public static class G_GlobalSettings
+    {
+        public static bool ShowStatic = false;
+    }
 }

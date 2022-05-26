@@ -1,0 +1,53 @@
+﻿
+.MT_Whitenoise
+{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
+    background-position: center;
+    animation: back 5s linear infinite;
+}
+
+.MT_WhitenoiseContainer
+{
+    opacity: 0.6;
+    display: none;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+    .MT_WhitenoiseContainer[isfade="1"]
+    {
+        display:unset;
+        /*animation: fadeinout .2s linear forwards;*/
+    }
+
+@keyframes back
+{
+    from
+    {
+        background-size: 100% 100%;
+    }
+
+    to
+    {
+        background-size: 200% 200%;
+    }
+}
+
+@keyframes fadeinout
+{
+    0%,100%
+    {
+        opacity: 0;
+    }
+
+    50%
+    {
+        opacity: 1;
+    }
+}

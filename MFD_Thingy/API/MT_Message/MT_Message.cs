@@ -12,6 +12,7 @@ namespace MFD_Thingy.API
         public List<MT_Message_Data> Data { get; set; }
         public string HTML { get; set; }
         public string CSS { get; set; }
+        public bool ShowStatic { get; set; }
     }
 
     public class MT_Message_Data

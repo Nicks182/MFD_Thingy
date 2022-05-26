@@ -1,6 +1,8 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -17,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using MFD_Thingy.APP.Services;
+using QRCoder;
 
 namespace MFD_Thingy
 {
@@ -36,9 +39,10 @@ namespace MFD_Thingy
             this.messageBusService.RegisterEvent("serverstatuschanged", (status) =>
             {
                 ServerStatus = this.serverService.GetServerStatus();
-                Txt_ServerOutput.Text += "Server Status: " + ServerStatus + Environment.NewLine;
+                Txt_ServerOutput.Text += DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + ":: Server Status: " + ServerStatus + Environment.NewLine;
+                Txt_ServerOutput.ScrollToEnd();
 
-                if(ServerStatus.Contains("Running") == true)
+                if (ServerStatus.Contains("Running") == true)
                 {
                     _PrintURL();
                 }
@@ -48,7 +52,8 @@ namespace MFD_Thingy
             {
                 if (Check_LogAll.IsChecked.GetValueOrDefault(false) == true)
                 {
-                    Txt_ServerOutput.Text += "API Message: " + status + Environment.NewLine;
+                    Txt_ServerOutput.Text += DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + ":: API Message: " + status + Environment.NewLine;
+                    Txt_ServerOutput.ScrollToEnd();
                 }
             });
 
@@ -104,7 +109,14 @@ namespace MFD_Thingy
 
         private void _PrintURL()
         {
-            Txt_ServerAddress.Text = "http://" + GetLocalIPAddress() + ":5000"; 
+            Txt_ServerAddress.Text = "http://" + GetLocalIPAddress() + ":5000";
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(Txt_ServerAddress.Text, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(20, System.Drawing.Color.White, System.Drawing.Color.Black, true);
+
+            Img_QRCode.Source = BitmapToImageSource(qrCodeImage);
         }
 
         public string GetLocalIPAddress()
@@ -119,6 +131,27 @@ namespace MFD_Thingy
             }
             
             return "No network adapters with an IPv4 address in the system!";
+        }
+
+        BitmapImage BitmapToImageSource(Bitmap bitmap)
+        {
+            using (MemoryStream memory = new MemoryStream())
+            {
+                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitmapimage = new BitmapImage();
+                bitmapimage.BeginInit();
+                bitmapimage.StreamSource = memory;
+                bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapimage.EndInit();
+
+                return bitmapimage;
+            }
+        }
+
+        private void Check_ShowStatic_Checked(object sender, RoutedEventArgs e)
+        {
+            G_GlobalSettings.ShowStatic = Check_ShowStatic.IsChecked.Value;
         }
     }
 }

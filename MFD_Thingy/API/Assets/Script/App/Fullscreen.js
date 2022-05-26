@@ -7,6 +7,7 @@ function _SetFullscreen()
 	{
 		document.exitFullscreen()
 		G_IsFullscreen = false;
+		window.scrollTo();
 	}
 	else
 	{

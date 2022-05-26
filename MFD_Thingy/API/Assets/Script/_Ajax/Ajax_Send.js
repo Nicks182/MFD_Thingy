@@ -4,6 +4,12 @@ function _Connection_Send(P_MT_Message)
 {
     try
     {
+        console.log(G_ShowStatic);
+        if (G_ShowStatic == true)
+        {
+            $G_WhiteNoise.attr("isfade", "1");
+        }
+
         $.ajax(
         {
             type: "POST",

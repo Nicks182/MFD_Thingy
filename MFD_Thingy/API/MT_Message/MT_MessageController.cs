@@ -75,7 +75,8 @@ namespace MFD_Thingy.API
             }
 
             watch.Stop();
-            ;
+
+            P_MT_Message.ShowStatic = G_GlobalSettings.ShowStatic;
 
             G_MessageBusService.Emit("controllermessage", P_MT_Message.MessageType.ToString() + _GetTime (watch.ElapsedMilliseconds));
 

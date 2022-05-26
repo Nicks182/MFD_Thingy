@@ -9,6 +9,7 @@
         "back caption fullscreen"
         "body body body";
     height: 100%;
+    max-height: calc(100% - 10px);
     background-color: var(--ColorBG);
     padding: 5px;
 }
