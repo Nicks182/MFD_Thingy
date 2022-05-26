@@ -10,9 +10,9 @@ Both of those apps mentioned above offer features not available here. They both 
 
 # What does this app do?
 This uses a WPF desktop application with it's own web host to host a HTML page which you can browse to with any device that can run a browser and is connected to your local network. 
-The WPF app controls the web host and also allows the user to configure what the Displays should look like.
+The WPF app controls the web host and also allows the user to configure what the Displays/Screens should look like.
 
-By no means is this some sort of complete solution and was put together rather quickly. As such some things were setup with the idea of doing more, but I ended up not doing a lot of it. I may do more work on it in the future, but for now it's functional which is all I really wanted.
+By no means is this some sort of complete solution and was put together in less than a week. As such some things were setup with the idea of doing more, but I ended up not doing a lot of it. I may do more work on it in the future, but for now it's functional which is all I really wanted.
 
 Devices you can use with this can be old phones, tablets, or even a raspberry pi with touch screen. Anything with a browser and a network interface.
 
