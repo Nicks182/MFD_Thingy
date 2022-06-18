@@ -1,6 +1,8 @@
 # MFD_Thingy
 Web Based Multi-Function Display for Sim games... or any games. 
 
+NOTE: I slapped this together in less than a week mostly for my own use.
+
 # Why?
 This app simulates keyboard and mouse inputs. It is very similar to other apps like matricapp.com or gameglass.gg, but apps like this require you to install a app/service on your main machine and then another app/client on the device you wish to use. The client app will then send your input requests to the service on your main machine and will often just simulate a key press. 
 
