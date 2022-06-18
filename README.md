@@ -1,5 +1,5 @@
 # MFD_Thingy
-Web Based Multi-Function Display for Sim games... or any games. 
+Web Based Multi-Function Display for Sim games... or any games. It's basically a virtual keyboard as the buttons you press on the HTML page ends up simulating a keypress on the PC. You can link multiple keys to one button as well.
 
 NOTE: I slapped this together in less than a week mostly for my own use.
 
